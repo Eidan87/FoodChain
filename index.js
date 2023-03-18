@@ -68,7 +68,7 @@ class Blockchain {
 }
 
 // Crear una nueva instancia de la blockchain
-const foodchain = new Blockchain()
+const foodChain = new Blockchain()
 
 foodChain.agregarBloque(new Block('02/01/2022', 'Productor 1', 'Producto 1', 10, 'Certificado 1', 'Ubicacion 1', 'Evaluacion 1', 'Votacion 1', 'Tipo 1', '01/02/2023', 'Proceso 1', 'Ubicacion exacta 1', 'Pruebas 1', 'Contacto 1', 'Certificaciones 1', 'Transacciones 1'))
 foodChain.agregarBloque(new Block('03/01/2022', 'Productor 2', 'Producto 2', 5, 'Certificado 2', 'Ubicacion 2', 'Evaluacion 2', 'Votacion 2', 'Tipo 2', '01/03/2023', 'Proceso 2', 'Ubicacion exacta 2', 'Pruebas 2', 'Contacto 2', 'Certificaciones 2', 'Transacciones 2'))
