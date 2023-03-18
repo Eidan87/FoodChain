@@ -4,7 +4,7 @@ Blockchain para comprar y vender alimentos de productor a consumidor
 ###Block.js en su primera version...
 
 class Block {
-  constructor(timestamp, productor, producto, cantidad, certificado, ubicacion, evaluacion, votacion, tipoAlimento, fechaCaducidad, procesoProduccion, ubicacionExacta, pruebasLaboratorio, contacto, certificaciones, hashPrevio='', id='') {
+  constructor(timestamp, productor, producto, cantidad, certificado, ubicacion, evaluacion, votacion, tipoAlimento, fechaCaducidad, procesoProduccion, ubicacionExacta, pruebasLaboratorio, contacto, certificaciones, transacciones, hashPrevio='', id='') {
     this.timestamp = timestamp
     this.productor = productor
     this.producto = producto
@@ -20,14 +20,17 @@ class Block {
     this.pruebasLaboratorio = pruebasLaboratorio
     this.contacto = contacto
     this.certificaciones = certificaciones
+    this.transacciones = []
+    this.id = id
     this.hashPrevio = hashPrevio
     this.comodin = 0
     this.hash = this.calcularHash()
-    this.id = id
+    
+   
   }
 
   calcularHash() {
-    return SHA256(this.timestamp + this.productor + this.producto + this.cantidad + this.certificado + this.ubicacion + this.evaluacion + this.votacion + this.tipoAlimento + this.fechaCaducidad + this.procesoProduccion + this.ubicacionExacta + this.pruebasLaboratorio + this.contacto + this.certificaciones + this.hashPrevio + this.comodin).toString()
+    return SHA256(this.timestamp + this.productor + this.producto + this.cantidad + this.certificado + this.ubicacion + this.evaluacion + this.votacion + this.tipoAlimento + this.fechaCaducidad + this.procesoProduccion + this.ubicacionExacta + this.pruebasLaboratorio + this.contacto + this.certificaciones + this.transacciones + this.id + this.hashPrevio + this.comodin).toString()
   }
 }
 
